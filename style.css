@@ -1,0 +1,55 @@
+body {
+    background: wheat;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.start_btn {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.buttons button {
+    background: rgb(207, 207, 184);
+    border-radius: 5px;
+    color: white;
+    margin: 0 5px;
+    height: 40px;
+    width: 100px;
+    font-size: 16px;
+    font-weight: 500px;
+    cursor: pointer;
+}
+
+.info_box {
+    background: rgb(237, 198, 198);
+    border-radius: 3px;
+    margin: auto;
+    width: 50%;
+    border: 3px solid green;
+    padding: 10px;
+}
+
+.info_box .info_title {
+    height: 60px;
+    width: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    border-bottom: 1px gray;
+    padding: 0 35px;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.info_box .info_list {
+    margin: 5px 0;
+    font-size: 18px;
+    padding: 10px 35px;
+} 
+
+aside {
+    font: bolder;
+
+}
