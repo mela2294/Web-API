@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,6 +11,7 @@
     <script src="question.js"></script>
 
 </head>
+
 <body>
     <header>
         <div>
@@ -27,37 +29,37 @@
         </div>
         <div class="info_list">
             <div class="info">Try to answer the following code-related questions within the time limit.
-            Keep in mind that incorrect answers will penalize your score/time by ten seconds!</div>
-        <div class="buttons">
-            <button type="submit" class="start-quiz" onclick="startQuiz()">Start Quiz</button>
-            <button type="submit" class="exit-quiz" onclick="exitQuiz()">Exit Quiz</button>
+                Keep in mind that incorrect answers will penalize your score/time by ten seconds!</div>
+            <div class="buttons">
+                <button type="submit" class="start-quiz" onclick="startQuiz()">Start Quiz</button>
+                <button type="submit" class="exit-quiz" onclick="exitQuiz()">Exit Quiz</button>
+            </div>
         </div>
-    </div>
-    
-    <section id="questions" hidden>
-        <button id="answer1"></button>
-        <button id="answer2"></button>
-        <button id="answer3"></button>
-        <button id="answer4"></button>
-        <button id="answer5"></button>
-    </section>
 
-    <section id="quiz-results" hidden>
-        <p>Your final score is: <span id="results"></span> </p>
-        
-        <div class="input-group">
-            <label for="initials">Initials:</label>
-            <input id="initials"></input>
-            <button id="submit">Submit</button>
-        </div>
-    </section>
+        <section class="questions" id="questions" hidden>
+            <button id="answer1"></button>
+            <button id="answer2"></button>
+            <button id="answer3"></button>
+            <button id="answer4"></button>
+            <button id="answer5"></button>
+        </section>
 
-    <section id="temp-results" hidden>
-        <hr>
-        <p id="wrong" hidden>Wrong!</p>
-        <p id="correct" hidden>Correct!</p>
-    </section>
-</main>
+        <section id="quiz-results" hidden>
+            <p>Your final score is: <span id="results"></span> </p>
+
+            <div class="input-group">
+                <label for="initials">Initials:</label>
+                <input id="initials"></input>
+                <button id="submit">Submit</button>
+            </div>
+        </section>
+
+        <section id="temp-results" hidden>
+            <hr>
+            <p id="wrong" hidden>Wrong!</p>
+            <p id="correct" hidden>Correct!</p>
+        </section>
+        </main>
 </body>
 
 </html>

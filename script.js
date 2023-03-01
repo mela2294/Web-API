@@ -26,15 +26,15 @@ document.getElementById('start-button').onclick = function () {
     }, 1000);
 }
 
-function showTemporaryMessage(type){
-    if(type === "correct"){
+function showTemporaryMessage(type) {
+    if (type === "correct") {
         document.getElementById('correct').hidden = false;
         document.getElementById('wrong').hidden = true;
     } else {
         document.getElementById('correct').hidden = true;
         document.getElementById('wrong').hidden = false;
     }
-    document.getElementById('temp-results').hidden = false; 
+    document.getElementById('temp-results').hidden = false;
     temporaryMessageTimeout = setTimeout(function () {
         document.getElementById('temp-results').hidden = true;
     }, 2000)
@@ -46,7 +46,7 @@ function answer(userAnswer) {
         showTemporaryMessage("Correct")
     } else {
         seconds -= 20;
-        timer.innerHTML = seconds; 
+        timer.innerHTML = seconds;
         showTemporaryMessage("Wrong")
     }
 
@@ -73,7 +73,7 @@ document.getElementById('answer4').onclick = function () { answer(5) };
 
 document.getElementById('submit').onclick = function () {
     var initials = document.getElementById('initials').value;
-    if (!initials || initials.length > 3){
+    if (!initials || initials.length > 3) {
         showTemporaryMessage("Wrong");
         return;
     }
