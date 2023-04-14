@@ -1,26 +1,29 @@
 var question = 0;
 var seconds = 60;
-const timer = document.getElementById('timer');
+const timer = document.getElementById('Timer');
 var timerInterval;
 var temporaryMessageTimeout;
 const quizHeader = document.getElementById('quiz-header');
 const questions = document.getElementById('questions');
 
+//Load quiz questions and answers from questions.js
+const quiz = questions;
+
 //Quiz questions
 function setQuestion() {
-    quizHeader.textContent = quiz[num].question;
-    const answers = quiz[num].answers;
+    quizHeader.textContent = quiz[question].question;
+    const answers = quiz[question].choices;
     document.getElementById('answer1').innerHTML = "1. " + answers[0]
     document.getElementById('answer2').innerHTML = "2. " + answers[1]
     document.getElementById('answer3').innerHTML = "3. " + answers[2]
     document.getElementById('answer4').innerHTML = "4. " + answers[3]
-    document.getElementById('answer5').innerHTML = "5. " + answers[4]
 }
+
 // Adding hidden element
-document.getElementById('start-button').onclick = function () {
+document.querySelector('.start-quiz').onclick = function () {
     questions.hidden = false;
     document.getElementById('starting-section').hidden = true;
-    setQuestion(0);
+    setQuestion();
     timerInterval = setInterval(function () {
         timer.innerHTML = --seconds;
     }, 1000);
@@ -39,20 +42,21 @@ function showTemporaryMessage(type) {
         document.getElementById('temp-results').hidden = true;
     }, 2000)
 }
+
 //Function for checking answers
 function answer(userAnswer) {
     clearTimeout(temporaryMessageTimeout);
-    if (userAnswer === quiz[questionNumber].correctAnswer) {
+    if (userAnswer == quiz[question].answer) {
         showTemporaryMessage("Correct")
     } else {
-        seconds -= 20;
+        seconds -= 10;
         timer.innerHTML = seconds;
         showTemporaryMessage("Wrong")
     }
 
     question += 1;
     if (question < quiz.length) {
-        setQuestion(questionNumber);
+        setQuestion();
     } else {
         quizHeader.innerHTML = "All done";
         questions.hidden = true;
@@ -69,7 +73,7 @@ document.getElementById('answer1').onclick = function () { answer(1) };
 document.getElementById('answer2').onclick = function () { answer(2) };
 document.getElementById('answer3').onclick = function () { answer(3) };
 document.getElementById('answer4').onclick = function () { answer(4) };
-document.getElementById('answer4').onclick = function () { answer(5) };
+
 
 document.getElementById('submit').onclick = function () {
     var initials = document.getElementById('initials').value;
@@ -88,4 +92,5 @@ document.getElementById('submit').onclick = function () {
     localStorage.setItem("scores", JSON.stringify(scores))
     window.location.href = "./highscore.html";
 };
+
 

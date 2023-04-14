@@ -1,4 +1,4 @@
-var questions = [
+const question = [
 
     {
         question: "Commonly used data types do not include:",
